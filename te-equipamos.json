@@ -1,14 +1,13 @@
 {
   "brand": "Te Equipamos",
+  "schema_version": 2,
   "items": [
     {
       "active": true,
       "type": "review",
-      "sections": [
-        "Reviews",
-        "Ofertas",
-        "Ventas"
-      ],
+      "sections": ["Reviews", "Ofertas", "Ventas"],
+      "activities": ["senderismo", "trekking"],
+      "product_type": "chaqueta",
       "title": "Una chaqueta de 250 g que puede salvarte cuando cambia el tiempo",
       "summary": "Review de la Quechua Raincut Mujer: impermeabilidad de 5000 mm, cortaviento, ventilación y formato compacto.",
       "details": "Análisis propio de Te Equipamos con oferta y consulta de la variante disponible.",
@@ -17,12 +16,7 @@
       "score": 97,
       "featured": true,
       "direct": true,
-      "tags": [
-        "senderismo",
-        "impermeable",
-        "mujer",
-        "quechua"
-      ],
+      "tags": ["senderismo", "impermeable", "mujer", "quechua"],
       "url": "https://jorgesport.github.io/te-equipamos-quechua-raincut-mujer/"
     }
   ]
