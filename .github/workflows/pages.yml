@@ -18,10 +18,21 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - name: Instalar footer universal Te Equipamos
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          page = Path('index.html')
+          html = page.read_text(encoding='utf-8')
+          tag = '<script defer src="https://jorgesport.github.io/te-equipamos/universal-footer.js" data-te-universal-footer-loader></script>'
+          if 'data-te-universal-footer-loader' not in html:
+              if '</body>' not in html:
+                  raise SystemExit('No se encontró </body> para el footer universal')
+              page.write_text(html.replace('</body>', tag + '</body>', 1), encoding='utf-8')
+          PY
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v4
         with:
           path: .
-      - name: Deploy
-        id: deployment
+      - id: deployment
         uses: actions/deploy-pages@v4
